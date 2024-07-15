@@ -33,6 +33,10 @@ for line in sys.stdin:
     # strip removes whitespaces and new lines at the beginning and end of the line
     # the result is a tuple with 6 elements
     data = line.strip().split("\t")
+ 
+    #checking for 6 elements in the tuple
+    if len(data) != 6:
+        raise ValueError("Tuple has less than 6 elements")
 
     # store the 6 elements of the tuple in seperate variables
     date, time, item, category, sales, payment = data
